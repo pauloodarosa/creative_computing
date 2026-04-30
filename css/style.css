@@ -289,6 +289,28 @@ main {
   background: linear-gradient(135deg, var(--surface) 0%, #222831 100%);
 }
 
+.project-card--external .project-thumb {
+  position: relative;
+}
+
+.project-card--external .project-thumb::after {
+  content: "p5 editor";
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(12, 14, 18, 0.75);
+  border: 1px solid rgba(110, 231, 183, 0.35);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
 .site-footer {
   margin-top: auto;
   padding: 2rem 1.5rem;

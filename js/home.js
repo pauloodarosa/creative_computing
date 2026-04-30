@@ -1,8 +1,13 @@
 /* global PORTFOLIO_PROJECTS */
 
 function createCard(project, index) {
+  const isExternal =
+    project.external === true || /^https?:\/\//i.test(String(project.href || ""));
   const card = document.createElement("article");
-  card.className = "project-card" + (project.placeholder ? " placeholder" : "");
+  card.className =
+    "project-card" +
+    (project.placeholder ? " placeholder" : "") +
+    (isExternal ? " project-card--external" : "");
 
   const thumb = document.createElement("div");
   thumb.className = "project-thumb";
@@ -27,7 +32,13 @@ function createCard(project, index) {
   const link = document.createElement("a");
   link.className = "project-link";
   link.href = project.href;
-  link.textContent = "Open sketch →";
+  if (isExternal) {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open in Web Editor →";
+  } else {
+    link.textContent = "Open sketch →";
+  }
 
   body.appendChild(link);
   card.appendChild(thumb);

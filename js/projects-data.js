@@ -1,35 +1,39 @@
 /**
- * Edit this file to set titles, short blurbs, and links for all 11 sketches.
- * Replace placeholder entries as you finish each assignment.
+ * Edit titles and descriptions anytime. Use external: true + editor URLs, or local paths
+ * like projects/my-sketch/index.html for sketches hosted in this repo.
  */
 window.PORTFOLIO_PROJECTS = [
   {
-    id: "01-sample",
-    title: "Sample sketch",
-    description: "Starter template — replace with your first real project.",
-    href: "projects/01-sample/index.html",
+    id: "editor-1",
+    title: "Sketch 1",
+    description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
+    href: "https://editor.p5js.org/pauloodarosa/full/AJVI9E7BF",
     placeholder: false,
+    external: true,
   },
   {
-    id: "02",
-    title: "Project 2",
-    description: "Add your title and one-line description here.",
-    href: "projects/02-placeholder/index.html",
-    placeholder: true,
+    id: "editor-2",
+    title: "Sketch 2",
+    description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
+    href: "https://editor.p5js.org/pauloodarosa/full/qKvuGh3ok",
+    placeholder: false,
+    external: true,
   },
   {
-    id: "03",
-    title: "Project 3",
-    description: "Add your title and one-line description here.",
-    href: "projects/03-placeholder/index.html",
-    placeholder: true,
+    id: "editor-3",
+    title: "Sketch 3",
+    description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
+    href: "https://editor.p5js.org/pauloodarosa/full/FmGaXG1th",
+    placeholder: false,
+    external: true,
   },
   {
-    id: "04",
-    title: "Project 4",
-    description: "Add your title and one-line description here.",
-    href: "projects/04-placeholder/index.html",
-    placeholder: true,
+    id: "editor-4",
+    title: "Sketch 4",
+    description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
+    href: "https://editor.p5js.org/pauloodarosa/full/kmRcRYmOP",
+    placeholder: false,
+    external: true,
   },
   {
     id: "05",
