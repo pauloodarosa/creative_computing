@@ -8,6 +8,7 @@ function createCard(project, index) {
     "project-card" +
     (project.placeholder ? " placeholder" : "") +
     (isExternal ? " project-card--external" : "");
+  card.dataset.theme = String(index + 1);
 
   const thumb = document.createElement("div");
   thumb.className = "project-thumb";
@@ -53,12 +54,29 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-function runThumbSketch(containerId, seed) {
+/* RGB bases aligned with CSS [data-theme] accents (1–11). */
+const THUMB_PALETTES = [
+  [110, 231, 183],
+  [125, 211, 252],
+  [196, 181, 253],
+  [251, 164, 182],
+  [252, 211, 77],
+  [190, 242, 100],
+  [251, 146, 60],
+  [34, 211, 238],
+  [244, 114, 182],
+  [96, 165, 250],
+  [74, 222, 128],
+];
+
+function runThumbSketch(containerId, seed, themeIndex) {
   const el = document.getElementById(containerId);
   if (!el || typeof p5 === "undefined") return;
 
   const w = el.clientWidth || 280;
   const h = Math.round((w * 10) / 16);
+  const ti = Math.max(1, Math.min(11, themeIndex || 1)) - 1;
+  const base = THUMB_PALETTES[ti];
 
   new p5((p) => {
     let t = seed * 1000;
@@ -68,7 +86,7 @@ function runThumbSketch(containerId, seed) {
     };
     p.draw = function () {
       t += 0.015;
-      p.background(26, 31, 42);
+      p.background(22, 26, 34);
       const cols = 12;
       const rows = 8;
       const cw = p.width / cols;
@@ -76,8 +94,13 @@ function runThumbSketch(containerId, seed) {
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           const n = p.noise(i * 0.2 + seed, j * 0.2 + t);
-          const g = p.map(n, 0, 1, 40, 120);
-          p.fill(110, 231 - g * 0.3, 183 - g * 0.2, 180 + n * 75);
+          const g = p.map(n, 0, 1, 35, 115);
+          p.fill(
+            base[0] - g * 0.28,
+            base[1] - g * 0.22,
+            base[2] - g * 0.18,
+            165 + n * 80
+          );
           p.rect(i * cw, j * ch, cw - 1, ch - 1, 3);
         }
       }
@@ -98,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.appendChild(card);
     if (thumbId) {
       requestAnimationFrame(function () {
-        runThumbSketch(thumbId, index * 0.17);
+        runThumbSketch(thumbId, index * 0.17, index + 1);
       });
     }
   });

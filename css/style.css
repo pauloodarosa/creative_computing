@@ -218,18 +218,72 @@ main {
 }
 
 .project-card {
+  --card-rgb: 110, 231, 183;
+  --card-pattern-angle: 118deg;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--bg-elevated);
+  background: linear-gradient(
+    165deg,
+    rgba(var(--card-rgb), 0.06) 0%,
+    var(--bg-elevated) 38%,
+    var(--bg-elevated) 100%
+  );
   overflow: hidden;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+.project-card[data-theme="1"] {
+  --card-rgb: 110, 231, 183;
+  --card-pattern-angle: 112deg;
+}
+.project-card[data-theme="2"] {
+  --card-rgb: 125, 211, 252;
+  --card-pattern-angle: 124deg;
+}
+.project-card[data-theme="3"] {
+  --card-rgb: 196, 181, 253;
+  --card-pattern-angle: 96deg;
+}
+.project-card[data-theme="4"] {
+  --card-rgb: 251, 164, 182;
+  --card-pattern-angle: 132deg;
+}
+.project-card[data-theme="5"] {
+  --card-rgb: 252, 211, 77;
+  --card-pattern-angle: 108deg;
+}
+.project-card[data-theme="6"] {
+  --card-rgb: 190, 242, 100;
+  --card-pattern-angle: 142deg;
+}
+.project-card[data-theme="7"] {
+  --card-rgb: 251, 146, 60;
+  --card-pattern-angle: 88deg;
+}
+.project-card[data-theme="8"] {
+  --card-rgb: 34, 211, 238;
+  --card-pattern-angle: 154deg;
+}
+.project-card[data-theme="9"] {
+  --card-rgb: 244, 114, 182;
+  --card-pattern-angle: 102deg;
+}
+.project-card[data-theme="10"] {
+  --card-rgb: 96, 165, 250;
+  --card-pattern-angle: 136deg;
+}
+.project-card[data-theme="11"] {
+  --card-rgb: 74, 222, 128;
+  --card-pattern-angle: 118deg;
+}
+
 .project-card:hover {
-  border-color: rgba(110, 231, 183, 0.35);
-  box-shadow: 0 0 0 1px var(--accent-dim), 0 18px 40px -24px var(--glow);
+  border-color: rgba(var(--card-rgb), 0.45);
+  box-shadow:
+    0 0 0 1px rgba(var(--card-rgb), 0.12),
+    0 18px 40px -22px rgba(var(--card-rgb), 0.28);
 }
 
 .project-thumb {
@@ -241,7 +295,7 @@ main {
   font-family: var(--font-mono);
   font-size: 2rem;
   font-weight: 700;
-  color: rgba(110, 231, 183, 0.25);
+  color: rgba(var(--card-rgb), 0.32);
   border-bottom: 1px solid var(--border);
 }
 
@@ -277,7 +331,7 @@ main {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--accent);
+  color: rgb(var(--card-rgb));
   text-decoration: none;
 }
 
@@ -286,7 +340,19 @@ main {
 }
 
 .project-card.placeholder .project-thumb {
-  background: linear-gradient(135deg, var(--surface) 0%, #222831 100%);
+  color: rgba(var(--card-rgb), 0.45);
+  background:
+    repeating-linear-gradient(
+      var(--card-pattern-angle),
+      rgba(var(--card-rgb), 0.11) 0 6px,
+      transparent 6px 13px
+    ),
+    repeating-linear-gradient(
+      calc(var(--card-pattern-angle) + 52deg),
+      rgba(var(--card-rgb), 0.05) 0 11px,
+      transparent 11px 24px
+    ),
+    linear-gradient(145deg, rgba(var(--card-rgb), 0.12) 0%, var(--surface) 45%, #1a2030 100%);
 }
 
 .project-card--external .project-thumb {
@@ -304,9 +370,9 @@ main {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
-  background: rgba(12, 14, 18, 0.75);
-  border: 1px solid rgba(110, 231, 183, 0.35);
+  color: rgb(var(--card-rgb));
+  background: rgba(12, 14, 18, 0.78);
+  border: 1px solid rgba(var(--card-rgb), 0.42);
   border-radius: 6px;
   pointer-events: none;
 }

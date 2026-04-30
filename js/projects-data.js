@@ -5,7 +5,7 @@
 window.PORTFOLIO_PROJECTS = [
   {
     id: "editor-1",
-    title: "Sketch 1",
+    title: "Interactive 2d pattern",
     description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
     href: "https://editor.p5js.org/pauloodarosa/full/AJVI9E7BF",
     placeholder: false,
@@ -13,7 +13,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "editor-2",
-    title: "Sketch 2",
+    title: "Hackaton done in class ",
     description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
     href: "https://editor.p5js.org/pauloodarosa/full/qKvuGh3ok",
     placeholder: false,
@@ -21,7 +21,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "editor-3",
-    title: "Sketch 3",
+    title: "Thousands of x  ",
     description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
     href: "https://editor.p5js.org/pauloodarosa/full/FmGaXG1th",
     placeholder: false,
@@ -29,18 +29,19 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "editor-4",
-    title: "Sketch 4",
+    title: "Sound mirror 4",
     description: "Full-screen run on the p5.js Web Editor — edit the title here when you name the piece.",
     href: "https://editor.p5js.org/pauloodarosa/full/kmRcRYmOP",
     placeholder: false,
     external: true,
   },
   {
-    id: "05",
-    title: "Project 5",
-    description: "Add your title and one-line description here.",
-    href: "projects/05-placeholder/index.html",
-    placeholder: true,
+    id: "01-sample",
+    title: "Paulo Da Rosa portfolio",
+    description: "Local sketch page in this repo (projects/01-sample). Edit this card in projects-data.js.",
+    href: "projects/01-sample/index.html",
+    placeholder: false,
+    external: false,
   },
   {
     id: "06",
