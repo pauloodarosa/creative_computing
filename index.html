@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio of p5.js creative coding projects — Introduction to Computing."
+    />
+    <title>Creative Computing — p5.js Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#projects">Skip to projects</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <p class="logo">intro<span>computing</span> / portfolio</p>
+        <nav class="nav-links" aria-label="Page">
+          <a href="#projects">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--interactive" aria-labelledby="hero-title">
+        <div id="hero-canvas-host" class="hero-canvas-host" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1 id="hero-title">p5.js work from this semester</h1>
+          <p class="hero-lede">
+            A collection of interactive sketches and small programs built with p5.js for my
+            introduction to computing course. Each card links to a live sketch you can run in the
+            browser.
+          </p>
+          <p class="hero-meta">
+            <strong>11 projects</strong> · replace placeholders as you complete each assignment
+          </p>
+          <p class="hero-hint">Move the pointer over the banner — nodes follow physics + proximity links.</p>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="section-title">All projects</h2>
+        <div id="project-grid" class="project-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with HTML, CSS, and p5.js · edit <code>js/projects-data.js</code> to update titles and links</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/hero-interactive.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
