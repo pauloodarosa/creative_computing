@@ -38,7 +38,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "01-sample",
     title: "Paulo Da Rosa portfolio",
-    description: "Local sketch page in this repo (projects/01-sample). Edit this card in projects-data.js.",
+    description: "Interactive sketch hosted on this site.",
     href: "projects/01-sample/index.html",
     placeholder: false,
     external: false,
