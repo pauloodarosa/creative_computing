@@ -42,14 +42,12 @@
   );
 
   new p5((p) => {
-    const count = 52;
+    const count = 38;
     const nodes = [];
-    const linkDist = 92;
-    const mouseR = 145;
-    const mouseRSq = mouseR * mouseR;
 
     function layoutHeight(width) {
-      return Math.max(220, Math.min(400, width * 0.36));
+      /* Slim strip: keeps the hero headline high without a tall canvas */
+      return Math.max(96, Math.min(168, Math.round(width * 0.14)));
     }
 
     p.setup = function () {
@@ -77,6 +75,9 @@
     p.draw = function () {
       const w = p.width;
       const h = p.height;
+      const linkDist = Math.min(78, Math.max(42, h * 0.95));
+      const mouseR = Math.min(130, Math.max(56, h * 1.25));
+      const mouseRSq = mouseR * mouseR;
       p.background(14, 17, 22);
 
       if (hasPointer) {
